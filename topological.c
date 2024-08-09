@@ -5,10 +5,12 @@ int temp[10], k = 0;
 
 void sort(int a[][10], int id[], int n) {
     int i, j;
+    
     for (i = 1; i <= n; i++) {
         if (id[i] == 0) {
             id[i] = -1;
             temp[++k] = i;
+            
             for (j = 1; j <= n; j++) {
                 if (a[i][j] == 1 && id[j] != -1)
                     id[j]--;
@@ -43,9 +45,9 @@ int main() {
 
     sort(a, id, n);
 
-    if (k != n)
-        printf("\nTopological ordering not possible (Graph has a cycle).\n");
-    else {
+    if (k != n) {
+        printf("\nThe graph contains a cycle; topological sorting is not possible.\n");
+    } else {
         printf("\nTopological ordering is: ");
         for (i = 1; i <= k; i++)
             printf("%d ", temp[i]);
