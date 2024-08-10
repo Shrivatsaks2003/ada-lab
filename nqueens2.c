@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+
 #include <stdlib.h>
 
 int c[20], count = 0;
